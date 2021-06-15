@@ -1,0 +1,80 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Manrope", sans-serif;
+  background-color: #8082de;
+  color: white;
+}
+
+h1 {
+  letter-spacing: 4px;
+}
+
+.input-field input[type="email"]:focus,
+.input-field input[type="password"]:focus {
+  border-bottom: 1px solid white !important;
+  box-shadow: 0 1px 0 0 white !important;
+}
+
+.container {
+  padding: 4rem 0rem;
+  height: 600px;
+}
+
+#form {
+  margin-left: 6rem;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+}
+
+#textarea {
+  align-self: flex-start;
+  margin: 0;
+  padding: 0;
+}
+
+.button-container {
+  display: flex;
+  height: 8rem;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+button {
+  background-color: white;
+  border-radius: 6rem;
+  border: none;
+  padding: 1rem 1.8rem;
+  margin: 0.7rem 0rem;
+  font-size: 1.2rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: opacity, color, transform 0.6s ease 0s;
+  box-shadow: 0px 4px 8px rgb(70, 70, 70);
+  transform: scale(1);
+}
+
+button:hover {
+  opacity: 0.95;
+  transform: scale(0.9);
+  color: #8082de;
+}
+
+button:focus {
+  background-color: rgb(137, 139, 139);
+}
+a {
+  margin-top: 0.5rem;
+  color: white;
+  font-size: 1.4rem;
+  font-weight: 500;
+  text-decoration: underline;
+}
