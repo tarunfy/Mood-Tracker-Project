@@ -4,6 +4,7 @@ const passwordInput = document.querySelector("#password-input");
 const loginBtn = document.querySelector("#login-btn");
 const regBtn = document.querySelector("#register-btn");
 const regLink = document.querySelector("#register-link");
+const saveAndExitBtn = document.querySelector("#save-exit");
 let regErrorToastHTML;
 let loginErrorToastHTML;
 let loginSuccessToastHTML =
@@ -104,3 +105,24 @@ loginBtn.addEventListener("click", () => {
       passwordInput.value = "";
     });
 });
+
+saveAndExitBtn.addEventListener("click", helplineToast);
+
+regLink.addEventListener("click", () => {
+  let elems = document.querySelector(".modal");
+  let instances = M.Modal.init(elems, {
+    endingTop: "20%",
+  });
+  instances.open();
+});
+
+// Functions:
+
+function helplineToast() {
+  setTimeout(() => {
+    M.toast({
+      html: '<span class="toast-text-styling ">Successfully resgitered as helpline</span>',
+      classes: "rounded toast",
+    });
+  }, 300);
+}

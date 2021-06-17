@@ -12,6 +12,7 @@ body {
 
 h1 {
   letter-spacing: 4px;
+  font-size: 5rem;
 }
 
 .input-field input[type="email"]:focus,
@@ -21,7 +22,7 @@ h1 {
 }
 
 .container {
-  padding: 4rem 0rem;
+  padding: 6rem 0rem;
   height: 600px;
 }
 
@@ -107,4 +108,32 @@ input:-webkit-autofill:focus,
 input:-webkit-autofill:active {
   box-shadow: inset;
   -webkit-box-shadow: 0 0 0 30px #8082de inset !important;
+}
+
+.modal {
+  height: 30rem !important;
+  overflow: hidden;
+  border-radius: 3rem;
+}
+
+.modal-content {
+  height: 25rem;
+}
+.modal-content form {
+  margin-top: 5rem;
+  margin-left: 10rem;
+  width: 60%;
+}
+
+.modal-footer {
+  height: 5rem !important;
+  padding: 0rem 1rem !important;
+}
+
+.primary-color {
+  background-color: #8082de !important;
+}
+
+.modal-content h4 {
+  font-weight: 600;
 }

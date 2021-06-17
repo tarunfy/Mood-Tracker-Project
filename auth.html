@@ -38,7 +38,7 @@
             </p>
           </div>
           <div class="col s12 l5 offset-12" id="form">
-            <form>
+            <form autocomplete="off">
               <div class="input-field">
                 <i class="material-icons prefix white-text">email</i>
                 <input
@@ -63,10 +63,40 @@
                 <a href="#">
                   <button id="register-btn">Register</button>
                 </a>
-                <a href="#" id="register-link">Register as helpline</a>
+                <a href="#modal1" id="register-link">Register as helpline</a>
               </div>
             </form>
           </div>
+        </div>
+      </div>
+      <!-- Modal Structure -->
+      <div id="modal1" class="modal">
+        <div class="modal-content primary-color">
+          <h4 class="center">Register As Helpline</h4>
+          <form autocomplete="off">
+            <div class="input-field">
+              <i class="material-icons prefix white-text">email</i>
+              <input
+                type="email"
+                id="email-input"
+                placeholder="Email"
+                class=""
+              />
+            </div>
+            <div class="input-field">
+              <i class="material-icons prefix white-text">lock</i>
+              <input
+                type="password"
+                id="password-input"
+                placeholder="Password"
+              />
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer primary-color">
+          <a href="#" class="modal-close">
+            <button id="save-exit">Save & Exit</button>
+          </a>
         </div>
       </div>
     </main>
