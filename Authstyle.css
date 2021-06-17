@@ -27,6 +27,11 @@ h1 {
 
 #form {
   margin-left: 6rem;
+  height: 24rem;
+}
+
+form {
+  height: 24rem;
 }
 
 .row {
@@ -42,9 +47,8 @@ h1 {
 
 .button-container {
   display: flex;
-  height: 8rem;
+  height: 12rem;
   flex-direction: column;
-  justify-content: space-between;
   align-items: center;
 }
 
@@ -72,7 +76,7 @@ button:focus {
   background-color: white;
 }
 a {
-  margin-top: 0.5rem;
+  margin-top: 0.2rem;
   color: white;
   font-size: 1.4rem;
   font-weight: 500;
@@ -95,4 +99,12 @@ a {
 
 .toast {
   background-color: white;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  box-shadow: inset;
+  -webkit-box-shadow: 0 0 0 30px #8082de inset !important;
 }
