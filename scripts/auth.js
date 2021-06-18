@@ -109,6 +109,7 @@ loginBtn.addEventListener("click", () => {
 saveAndExitBtn.addEventListener("click", helplineToast);
 
 regLink.addEventListener("click", () => {
+  setState("loading");
   let elems = document.querySelector(".modal");
   let instances = M.Modal.init(elems, {
     endingTop: "20%",
@@ -124,5 +125,6 @@ function helplineToast() {
       html: '<span class="toast-text-styling ">Successfully resgitered as helpline</span>',
       classes: "rounded toast",
     });
+    setState("success");
   }, 300);
 }
