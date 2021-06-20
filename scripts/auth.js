@@ -72,7 +72,7 @@ regBtn.addEventListener("click", (e) => {
 });
 
 // User Login
-loginBtn.addEventListener("click", () => {
+loginBtn.addEventListener("click", (e) => {
   e.preventDefault();
   setState("loading");
   loginBtn.innerText = "Loading...";
@@ -131,3 +131,9 @@ function helplineToast() {
     setState("success");
   }, 300);
 }
+
+auth.onAuthStateChanged((u) => {
+  if (u != null) {
+    window.location.href = "moods.html";
+  }
+});

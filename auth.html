@@ -25,7 +25,7 @@
     <main>
       <!-- Header -->
       <header>
-        <h1 class="center">Moodyy</h1>
+        <a href="index.html" class="center">Moodyy</a>
       </header>
 
       <div class="container">
@@ -44,6 +44,7 @@
                   type="email"
                   id="email-input"
                   placeholder="Email"
+                  value="v@ca.com"
                   class=""
                 />
               </div>
@@ -52,6 +53,7 @@
                 <input
                   type="password"
                   id="password-input"
+                  value="password"
                   placeholder="Password"
                 />
               </div>
@@ -89,25 +91,9 @@
     </main>
 
     <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-app.js"></script>
-
-    <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-auth.js"></script>
+    <script src="/scripts/init-firebase.js"></script>
 
-    <script>
-      var firebaseConfig = {
-        apiKey: "AIzaSyDXMbEuwFtR8FzTQgleIUxn2kOhVbJR42c",
-        authDomain: "mood-tracker-23629.firebaseapp.com",
-        projectId: "mood-tracker-23629",
-        storageBucket: "mood-tracker-23629.appspot.com",
-        messagingSenderId: "913062597116",
-        appId: "1:913062597116:web:480dd7a8e17d7b37c52279",
-        measurementId: "G-XG6LWQ5B89",
-      };
-      // Initialize Firebase
-      firebase.initializeApp(firebaseConfig);
-      // making auth reference:
-      const auth = firebase.auth();
-    </script>
     <!-- Scripts -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script src="./scripts/auth.js"></script>

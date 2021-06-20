@@ -1,0 +1,90 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #8082de;
+  overflow: hidden;
+  color: black;
+  font-family: "Manrope", sans-serif;
+}
+
+.container {
+  height: 100vh;
+  width: 700px;
+  padding: 10rem 0rem;
+}
+
+.input-field input[type="text"]:focus {
+  border-bottom: 1px solid rgb(0, 0, 0) !important;
+  box-shadow: 0 1px 0 0 rgb(0, 0, 0) !important;
+}
+
+.input-field textarea:focus {
+  border-bottom: 1px solid rgb(0, 0, 0) !important;
+  box-shadow: 0 1px 0 0 rgb(0, 0, 0) !important;
+}
+
+#form {
+  background-color: white;
+  border-radius: 2rem;
+  padding: 4rem 2rem;
+  box-shadow: 0 10px 25px rgba(92, 99, 105, 0.8);
+  padding: 3rem 3rem;
+  position: relative;
+}
+
+.button-container {
+  position: absolute;
+  right: 3rem;
+  bottom: 2rem;
+}
+
+.file-path-wrapper {
+  width: 0px;
+}
+
+.submit-btn {
+  background-color: white;
+  padding: 1rem;
+  font-size: 1.2rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 2rem;
+  box-shadow: 0 3px 10px rgba(92, 99, 105, 0.8);
+  cursor: pointer;
+  opacity: 1;
+  transition: all 0.5s ease;
+}
+
+.color {
+  width: 67.77px !important;
+}
+
+.submit-btn:focus {
+  background-color: white;
+}
+
+.submit-btn:hover {
+  opacity: 0.9;
+  transform: scale(0.9);
+}
+
+.btn span {
+  font-size: 1.3rem;
+}
+
+.btn {
+  height: 54px !important;
+  padding-top: 4px;
+  background-color: #8082de;
+  transition: all 0.5s ease;
+  transform: scale(1);
+}
+
+.btn:hover {
+  background-color: #7577cf;
+  transform: scale(0.9);
+}

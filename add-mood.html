@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+    />
+    <link rel="stylesheet" href="add-mood.css" />
+    <title>Add-Mood</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="col s12 l5 offset-12" id="form">
+        <form autocomplete="off">
+          <div class="input-field">
+            <input type="text" placeholder="Your Mood" />
+          </div>
+          <div class="input-field col s12">
+            <textarea
+              id="textarea1"
+              class="materialize-textarea"
+              placeholder="Note"
+            ></textarea>
+          </div>
+          <div class="input-field">
+            <input
+              type="text"
+              placeholder="How do you think your day will go today?"
+            />
+          </div>
+          <div class="input-field">
+            <input type="text" placeholder="Recent Activity" />
+          </div>
+          <div class="file-field input-field">
+            <div class="btn">
+              <span>File</span>
+              <input type="file" class="color" />
+            </div>
+            <div class="file-path-wrapper">
+              <input class="file-path validate color" type="text" />
+            </div>
+          </div>
+        </form>
+        <div class="button-container">
+          <a href="#"><button class="submit-btn">Submit</button></a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-firestore.js"></script>
+    <script src="./scripts/init-firebase.js"></script>
+    <script src="./scripts/add-mood.js"></script>
+    <script>
+      const db = firebase.firestore();
+      db.settings({ timestampsInSnapshots: true });
+    </script>
+  </body>
+</html>
