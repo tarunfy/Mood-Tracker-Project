@@ -11,7 +11,7 @@ let loginSuccessToastHTML =
   '<span class="toast-text-styling ">Logged In</span>';
 let regSuccessToastHTML =
   '<span class="toast-text-styling ">User has been registered</span>';
-const elements = [emailInput, passwordInput, loginBtn, regBtn, regLink];
+const elements = [emailInput, passwordInput, loginBtn, regBtn];
 
 let state = "idle";
 
@@ -37,10 +37,9 @@ function setState(newState) {
   console.log("Current State: " + state);
 }
 
-// Event listners:
-
 // New Registration:
-regBtn.addEventListener("click", () => {
+regBtn.addEventListener("click", (e) => {
+  e.preventDefault();
   setState("loading");
   regBtn.innerText = "Loading...";
 
@@ -74,6 +73,7 @@ regBtn.addEventListener("click", () => {
 
 // User Login
 loginBtn.addEventListener("click", () => {
+  e.preventDefault();
   setState("loading");
   loginBtn.innerText = "Loading...";
 
@@ -112,7 +112,6 @@ const enable = () => {
 };
 
 regLink.addEventListener("click", () => {
-  setState("loading");
   let elems = document.querySelector(".modal");
   let instances = M.Modal.init(elems, {
     endingTop: "20%",
