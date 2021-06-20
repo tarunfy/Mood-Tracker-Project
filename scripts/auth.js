@@ -107,12 +107,16 @@ loginBtn.addEventListener("click", () => {
 });
 
 saveAndExitBtn.addEventListener("click", helplineToast);
+const enable = () => {
+  setState("idle");
+};
 
 regLink.addEventListener("click", () => {
   setState("loading");
   let elems = document.querySelector(".modal");
   let instances = M.Modal.init(elems, {
     endingTop: "20%",
+    onCloseEnd: enable(),
   });
   instances.open();
 });
