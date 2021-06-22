@@ -26,7 +26,7 @@
       <div class="col s12 l5 offset-12" id="form">
         <form autocomplete="off">
           <div class="input-field">
-            <input type="text" placeholder="Your Mood" />
+            <input type="text" id="yourMood" placeholder="Your Mood" />
           </div>
           <div class="input-field col s12">
             <textarea
@@ -39,10 +39,15 @@
             <input
               type="text"
               placeholder="How do you think your day will go today?"
+              id="dayPrediction"
             />
           </div>
           <div class="input-field">
-            <input type="text" placeholder="Recent Activity" />
+            <input
+              type="text"
+              placeholder="Recent Activity"
+              id="recentActivity"
+            />
           </div>
           <div class="file-field input-field">
             <div class="btn">
@@ -54,17 +59,19 @@
               <input class="file-path validate color" type="text" />
             </div>
           </div>
+          <div class="button-container">
+            <a href="#"><button class="submit-btn">Submit</button></a>
+          </div>
         </form>
-        <div class="button-container">
-          <a href="#"><button class="submit-btn">Submit</button></a>
-        </div>
       </div>
     </div>
 
     <!-- Scripts -->
     <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-firestore.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-storage.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script src="./scripts/init-firebase.js"></script>
     <script src="./scripts/add-mood.js"></script>
     <script>
