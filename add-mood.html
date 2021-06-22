@@ -18,7 +18,7 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
     />
-    <link rel="stylesheet" href="add-mood.css" />
+    <link rel="stylesheet" href="./styles/add-mood.css" />
     <title>Add-Mood</title>
   </head>
   <body>
@@ -49,6 +49,7 @@
               <span>File</span>
               <input type="file" class="color" />
             </div>
+            <span class="remove-photo">X</span>
             <div class="file-path-wrapper">
               <input class="file-path validate color" type="text" />
             </div>
@@ -63,9 +64,11 @@
     <!-- Scripts -->
     <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-storage.js"></script>
     <script src="./scripts/init-firebase.js"></script>
     <script src="./scripts/add-mood.js"></script>
     <script>
+      const storage = firebase.storage();
       const db = firebase.firestore();
       db.settings({ timestampsInSnapshots: true });
     </script>
