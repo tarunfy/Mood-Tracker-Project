@@ -62,8 +62,12 @@ body {
 }
 
 .color {
-  width: 67.77px !important;
+  width: 109.02px !important;
   height: 54px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
 }
 
 .submit-btn:focus {
@@ -82,9 +86,11 @@ body {
 
 .btn {
   height: 54px !important;
-  padding-top: 4px;
+  padding: 4px 6px;
   background-color: #8082de;
   transition: all 0.5s ease;
+  position: relative;
+  z-index: 5;
 }
 
 .btn:hover {
