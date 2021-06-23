@@ -63,8 +63,14 @@ form.addEventListener("submit", (e) => {
 
     uploadTask.on("state_changed", null, onUploadError, onUploadSuccess);
   } else {
-    if (file == null) {
-      toastHtml = `<span class="toast-text-styling ">Please select a photo</span>`;
+    if (
+      form.yourMood.value == "" &&
+      note.value == "" &&
+      form.dayPrediction.value == "" &&
+      form.recentActivity.value == "" &&
+      file == null
+    ) {
+      toastHtml = `<span class="toast-text-styling "> Fillup the form first</span>`;
       M.toast({
         html: toastHtml,
         classes: "rounded toast",
@@ -79,6 +85,13 @@ form.addEventListener("submit", (e) => {
       M.toast({
         html: toastHtml,
         classes: "rounded toast ",
+      });
+    } else if (file == null) {
+      toastHtml = `<span class="toast-text-styling ">
+      Please select a photo</span>`;
+      M.toast({
+        html: toastHtml,
+        classes: "rounded toast",
       });
     } else {
       toastHtml = `<span class="toast-text-styling ">Something went wrong</span>`;
