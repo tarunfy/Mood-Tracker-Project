@@ -52,18 +52,18 @@
               id="recentActivity"
             />
           </div>
+          <img id="mood-image" />
           <div class="file-field input-field">
             <div class="btn">
-              <span>Add Image</span>
+              <span>Update Image</span>
               <input type="file" class="color" accept=".jpg,.jpeg,.png" />
             </div>
-            <span class="remove-photo">X</span>
             <div class="file-path-wrapper">
               <input class="file-path validate color" type="text" />
             </div>
           </div>
           <div class="button-container">
-            <a href="#"><button class="submit-btn">Submit</button></a>
+            <a href="#"><button class="update-btn">Update</button></a>
           </div>
         </form>
       </div>
@@ -77,10 +77,5 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script src="./scripts/init-firebase.js"></script>
     <script src="./scripts/update-mood.js"></script>
-    <script>
-      const storage = firebase.storage();
-      const db = firebase.firestore();
-      db.settings({ timestampsInSnapshots: true });
-    </script>
   </body>
 </html>

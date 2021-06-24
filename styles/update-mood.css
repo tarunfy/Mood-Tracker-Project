@@ -6,7 +6,6 @@
 
 body {
   background-color: #8082de;
-  overflow: hidden;
   color: black;
 }
 
@@ -51,7 +50,7 @@ body {
   height: 0px;
 }
 
-.submit-btn {
+.update-btn {
   background-color: white;
   padding: 1rem;
   font-size: 1.2rem;
@@ -66,7 +65,7 @@ body {
 }
 
 .color {
-  width: 109.02px !important;
+  width: 141.48px !important;
   height: 54px;
   position: absolute;
   top: 0;
@@ -74,11 +73,11 @@ body {
   z-index: 1;
 }
 
-.submit-btn:focus {
+.update-btn:focus {
   background-color: white;
 }
 
-.submit-btn:hover {
+.update-btn:hover {
   opacity: 0.9;
   transform: scale(0.9);
 }
@@ -142,4 +141,12 @@ header {
 header h1 {
   color: white;
   font-family: "Manrope", sans-serif;
+}
+
+#mood-image {
+  max-height: 150px;
+  width: 250px;
+  object-fit: contain;
+  margin-top: 2rem;
+  margin-right: 2rem;
 }
