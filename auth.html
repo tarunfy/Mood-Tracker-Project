@@ -24,8 +24,8 @@
   <body>
     <main>
       <!-- Header -->
-      <header>
-        <a href="index.html" class="center">Moodyy</a>
+      <header class="valign-wrapper">
+        <a href="index.html">Moodyy</a>
       </header>
 
       <div class="container">
@@ -72,13 +72,24 @@
           <h4 class="center">Register As Helpline</h4>
           <form autocomplete="off">
             <div class="input-field">
-              <input placeholder="Name of Organisation" class="" />
+              <i class="material-icons prefix white-text">people</i>
+              <input
+                placeholder="Name of Organisation"
+                id="org-input"
+                type="text"
+              />
             </div>
             <div class="input-field">
-              <input placeholder="Contact Number or Email Address" />
+              <i class="material-icons prefix white-text">contact_mail</i>
+              <input
+                placeholder="Contact Number or Email Address"
+                type="text"
+                id="contact-input"
+              />
             </div>
             <div class="input-field">
-              <input placeholder="Address" />
+              <i class="material-icons prefix white-text">location_on</i>
+              <input placeholder="Address" type="text" id="address-input" />
             </div>
           </form>
         </div>
@@ -89,10 +100,16 @@
         </div>
       </div>
     </main>
-
     <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-firestore.js"></script>
     <script src="/scripts/init-firebase.js"></script>
+
+    <!-- Taking reference -->
+    <script>
+      const db = firebase.firestore();
+      db.settings({ timestampsInSnapshots: true });
+    </script>
 
     <!-- Scripts -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>

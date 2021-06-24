@@ -10,20 +10,22 @@ body {
   color: white;
 }
 
-h1 {
-  letter-spacing: 4px;
-  font-size: 5rem;
-}
-
 .input-field input[type="email"]:focus,
-.input-field input[type="password"]:focus {
+.input-field input[type="password"]:focus,
+.input-field input[type="text"]:focus {
   border-bottom: 1px solid white !important;
   box-shadow: 0 1px 0 0 white !important;
 }
 
 .container {
-  padding: 6rem 0rem;
   height: 600px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 #form {
@@ -136,4 +138,16 @@ input:-webkit-autofill:active {
 
 .modal-content h4 {
   font-weight: 600;
+}
+
+header {
+  height: 10rem;
+  justify-content: center;
+}
+
+header a {
+  text-decoration: none;
+  font-size: 5rem;
+  font-weight: 500;
+  letter-spacing: 5px;
 }

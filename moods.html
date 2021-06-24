@@ -4,20 +4,44 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+    />
+    <link rel="stylesheet" href="./styles/mood.css" />
+    <title>Moods</title>
   </head>
   <body>
     <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-storage.js"></script>
     <script src="/scripts/init-firebase.js"></script>
-    <script src="/scripts/moods.js"></script>
-    <h1>wELCOME</h1>
-    <button onclick="logout()">Sign out</button>
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script>
+      // taking references:
+      const db = firebase.firestore();
       function logout() {
         auth.signOut();
       }
     </script>
+    <header>
+      <h1>Your Moods</h1>
+    </header>
+    <div class="container">
+      <ul class="collection list" id="mood-list"></ul>
+      <button onclick="logout()">Sign out</button>
+    </div>
+    <script src="/scripts/moods.js"></script>
   </body>
 </html>

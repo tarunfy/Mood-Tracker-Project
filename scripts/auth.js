@@ -1,6 +1,9 @@
 // Selecting dom elements:
 const emailInput = document.querySelector("#email-input");
 const passwordInput = document.querySelector("#password-input");
+const orgInput = document.querySelector("#org-input");
+const addressInput = document.querySelector("#address-input");
+const contactInput = document.querySelector("#contact-input");
 const loginBtn = document.querySelector("#login-btn");
 const regBtn = document.querySelector("#register-btn");
 const regLink = document.querySelector("#register-link");
@@ -106,7 +109,30 @@ loginBtn.addEventListener("click", (e) => {
     });
 });
 
-saveAndExitBtn.addEventListener("click", helplineToast);
+saveAndExitBtn.addEventListener("click", () => {
+  const org = orgInput.value;
+  const contact = contactInput.value;
+  const address = addressInput.value;
+
+  db.collection("helplines").add({
+    organisation: org,
+    contact_email: contact,
+    address: address,
+  });
+
+  orgInput.value = "";
+  contactInput.value = "";
+  addressInput.value = "";
+
+  setTimeout(() => {
+    M.toast({
+      html: '<span class="toast-text-styling ">Successfully resgitered as helpline</span>',
+      classes: "rounded toast",
+    });
+    setState("success");
+  }, 300);
+});
+
 const enable = () => {
   setState("idle");
 };
@@ -121,16 +147,6 @@ regLink.addEventListener("click", () => {
 });
 
 // Functions:
-
-function helplineToast() {
-  setTimeout(() => {
-    M.toast({
-      html: '<span class="toast-text-styling ">Successfully resgitered as helpline</span>',
-      classes: "rounded toast",
-    });
-    setState("success");
-  }, 300);
-}
 
 auth.onAuthStateChanged((u) => {
   if (u != null) {
