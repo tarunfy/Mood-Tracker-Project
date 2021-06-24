@@ -20,6 +20,34 @@ header h1 {
 .container {
   height: 100vh;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  justify-content: flex-start;
   align-items: center;
+}
+
+li {
+  /* padding: 20px; */
+  background: #f6f6f6;
+  font-size: 20px;
+  color: #555;
+  position: relative;
+  border-bottom: 1px solid #e6e6e6;
+  height: 2.4rem;
+}
+
+li div {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  background: rgba(255, 255, 255, 0.6);
+  /* width: 40px; */
+  text-align: center;
+  /* padding: 10px 0; */
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.5s ease;
+}
+
+li div:hover {
+  background-color: #8688cc;
 }

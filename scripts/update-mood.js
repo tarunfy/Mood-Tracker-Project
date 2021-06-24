@@ -120,6 +120,12 @@ function saveMoodToFirestore(photoUrl) {
     .doc(id)
     .update(newMood)
     .then(() => {
+      // Resetting the input fields:
+      yourMood.value = "";
+      note.value = "";
+      recentActivity.value = "";
+      dayPrediction.value = "";
+      imgInput.value = "";
       window.location.href = "moods.html";
     });
 }
