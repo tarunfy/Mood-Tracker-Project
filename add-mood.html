@@ -28,8 +28,18 @@
       </header>
       <div class="col s12 l5 offset-12" id="form">
         <form autocomplete="off">
-          <div class="input-field">
-            <input type="text" id="yourMood" placeholder="Your Mood" />
+          <div class="input-field" id="select">
+            <select name="yourMood" id="yourMood" onchange="getSelectValue();">
+              <option value="" disabled selected>Choose your mood</option>
+              <option value="0">0</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+              <option value="6">6</option>
+            </select>
+            <label for="yourMood">Your Mood:</label>
           </div>
           <div class="input-field col s12">
             <textarea

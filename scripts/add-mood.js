@@ -10,6 +10,9 @@ const dayPrediction = document.querySelector("#dayPrediction");
 const recentActivity = document.querySelector("#recentActivity");
 const form = document.querySelector("form");
 let uploadTask;
+let selectElement = document.getElementById("yourMood");
+let valueSelected = selectElement.options[selectElement.selectedIndex].value; // get selected option value
+let text = selectElement.options[selectElement.selectedIndex].text; //get the selected option text
 
 auth.onAuthStateChanged((user) => {
   if (user == null) {
@@ -107,12 +110,40 @@ function onUploadError(error) {
   console.error(error);
 }
 
+function getSelectValue() {
+  let val = selectElement.options[selectElement.selectedIndex].text;
+  switch (val) {
+    case "0":
+      text = "Happy";
+      break;
+    case "1":
+      text = "Sad";
+      break;
+    case "2":
+      text = "Cheerful";
+      break;
+    case "3":
+      text = "Angry";
+      break;
+    case "4":
+      text = "Nervous";
+      break;
+    case "5":
+      text = "Peaceful";
+      break;
+    case "6":
+      text = "Optimistic";
+      break;
+  }
+  return text;
+}
+
 function onUploadSuccess() {
   uploadTask.snapshot.ref
     .getDownloadURL()
     .then((downloadURL) => {
       db.collection("users").doc(auth.currentUser.uid).collection("moods").add({
-        yourMood: form.yourMood.value,
+        yourMood: text,
         Note: note.value,
         dayPrediction: form.dayPrediction.value,
         recentActivity: form.recentActivity.value,
