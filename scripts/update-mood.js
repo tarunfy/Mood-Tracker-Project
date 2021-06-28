@@ -14,10 +14,8 @@ let data;
 const storage = firebase.storage();
 const db = firebase.firestore();
 let selectedFile = null;
+
 let selectInputValue;
-let selectElement = document.getElementById("yourMood");
-let valueSelected = selectElement.options[selectElement.selectedIndex].value; // get selected option value
-let text = selectElement.options[selectElement.selectedIndex].text;
 
 db.settings({ timestampsInSnapshots: true });
 // Verifying if user is present:
@@ -40,31 +38,8 @@ function getData(userId) {
     .get()
     .then((doc) => {
       data = doc.data();
-      console.log(data);
-
-      switch (data.yourMood) {
-        case "Happy":
-          selectInputValue = "0";
-          break;
-        case "Sad":
-          selectInputValue = "1";
-          break;
-        case "Cheerful":
-          selectInputValue = "2";
-          break;
-        case "Angry":
-          selectInputValue = "3";
-          break;
-        case "Nervous":
-          selectInputValue = "4";
-          break;
-        case "Peaceful":
-          selectInputValue = "5";
-          break;
-        case "Optimistic":
-          selectInputValue = "6";
-          break;
-      }
+      console.log(data.yourMood);
+      selectInputValue = data.yourMood;
       fillForm();
     })
     .catch((err) => {
@@ -130,42 +105,12 @@ function onUploadSuccess() {
     .catch(console.error);
 }
 
-function getSelectValue() {
-  let val = selectElement.options[selectElement.selectedIndex].text;
-  console.log(val);
-  switch (val) {
-    case "0":
-      text = "Happy";
-      break;
-    case "1":
-      text = "Sad";
-      break;
-    case "2":
-      text = "Cheerful";
-      break;
-    case "3":
-      text = "Angry";
-      break;
-    case "4":
-      text = "Nervous";
-      break;
-    case "5":
-      text = "Peaceful";
-      break;
-    case "6":
-      text = "Optimistic";
-      break;
-  }
-  return text;
-}
-
 function saveMoodToFirestore(photoUrl) {
-  getSelectValue();
   const newMood = {
     Note: note.value,
     dayPrediction: dayPrediction.value,
     recentActivity: recentActivity.value,
-    yourMood: text,
+    yourMood: yourMood.value,
   };
 
   if (photoUrl != null) {
