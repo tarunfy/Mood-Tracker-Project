@@ -36,9 +36,18 @@
         auth.signOut();
       }
     </script>
-    <header>
-      <h1>Your Moods</h1>
-    </header>
+
+    <nav>
+      <div class="nav-wrapper">
+        <a href="#" class="brand-logo">Logo</a>
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+          <li class="active"><a href="moods.html">Moods</a></li>
+          <li><a href="insights.html">Insights</a></li>
+          <li><a href="helpline.html">Helpline</a></li>
+        </ul>
+      </div>
+    </nav>
+
     <div class="container">
       <ul class="collection list" id="mood-list"></ul>
       <button onclick="logout()">Sign out</button>

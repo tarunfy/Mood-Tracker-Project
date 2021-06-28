@@ -7,14 +7,7 @@
 body {
   background-color: #8082de;
   overflow: hidden;
-}
-
-header {
-  text-align: center;
-}
-
-header h1 {
-  color: white;
+  font-family: "Manrope", sans-serif;
 }
 
 .container {
@@ -25,7 +18,7 @@ header h1 {
   align-items: center;
 }
 
-li {
+.container ul li {
   /* padding: 20px; */
   background: #f6f6f6;
   font-size: 20px;
@@ -35,7 +28,7 @@ li {
   height: 2.4rem;
 }
 
-li div {
+.container ul li div {
   position: absolute;
   top: 0px;
   right: 0px;
@@ -50,4 +43,14 @@ li div {
 
 li div:hover {
   background-color: #8688cc;
+}
+
+ul li {
+  background-color: transparent;
+  border: none;
+}
+
+nav {
+  background-color: #8082de;
+  padding: 0rem 1rem;
 }
