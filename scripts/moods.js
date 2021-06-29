@@ -1,4 +1,5 @@
 // Getting dom elements:
+const signoutBtn = document.querySelector(".signout-btn");
 const cardsContainer = document.getElementById("cards");
 const floatBtn = document.getElementById("floating-btn");
 let userId;
@@ -99,3 +100,9 @@ function renderCard(Mood) {
 floatBtn.addEventListener("click", (e) => {
   window.location.href = "add-mood.html";
 });
+
+function logout() {
+  auth.signOut();
+}
+
+signoutBtn.addEventListener("click", logout);
