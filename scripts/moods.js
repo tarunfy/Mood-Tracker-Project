@@ -21,6 +21,8 @@ auth.onAuthStateChanged((u) => {
   db.collection("users")
     .doc(u.uid)
     .collection("moods")
+    .orderBy("date")
+    .orderBy("time")
     .get()
     .then((snapshot) => {
       snapshot.docs.forEach((mood) => {

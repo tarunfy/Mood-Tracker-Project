@@ -22,6 +22,7 @@ nav {
   display: flex;
   justify-content: space-evenly;
   flex-wrap: wrap;
+  gap: 1.2rem;
 }
 
 #card {
@@ -134,7 +135,7 @@ nav {
 }
 
 main {
-  height: 100vh;
+  height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
