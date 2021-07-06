@@ -141,13 +141,16 @@ input:-webkit-autofill:active {
 }
 
 header {
-  height: 10rem;
-  justify-content: center;
+  position: absolute;
+  transform: translateX(-50%);
+  left: 50%;
+  height: auto;
 }
 
-header a {
+#index-link {
   text-decoration: none;
   font-size: 5rem;
   font-weight: 500;
   letter-spacing: 5px;
+  cursor: pointer;
 }

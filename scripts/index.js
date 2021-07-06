@@ -20,6 +20,8 @@ auth.onAuthStateChanged((u) => {
 
 window.addEventListener("load", () => {
   textContainer.style.transform = "translateX(0)";
+  textContainer.style.opacity = "1";
   img.style.transform = "translateY(0)";
-  nav.style.transform = "translateY(0)";
+  img.style.opacity = "1";
+  nav.style.opacity = "1";
 });
