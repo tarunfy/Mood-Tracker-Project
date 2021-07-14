@@ -14,7 +14,8 @@ let today = new Date();
 let currentDate = today.getDate();
 let currentMonth = today.getMonth() + 1;
 let currentYear = today.getFullYear();
-let dateValue = `${currentDate}/${currentMonth}/${currentYear}`;
+
+let dateValue = moment(today).format("YYYY-MM-DD");
 let currentHour = today.getHours();
 let currentMin = today.getMinutes();
 let timeValue = `${currentHour}:${currentMin}`;

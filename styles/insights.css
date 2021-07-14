@@ -18,3 +18,131 @@ nav {
   background-color: #8082de;
   padding: 0rem 1rem;
 }
+
+#content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  margin: 0rem auto;
+  height: auto;
+  width: 95%;
+  margin-top: 2rem;
+}
+
+#avg-mood-card {
+  background-color: white;
+  border: none;
+  border-radius: 2rem;
+  padding: 1rem 1rem;
+  height: auto;
+  display: flex;
+  justify-content: space-between;
+  width: 43%;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+}
+
+#avg-mood-card .mood {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 50%;
+  padding: 0 1rem;
+}
+
+#avg-mood-card .mood p {
+  font-weight: 500;
+  font-size: 2rem;
+}
+
+#avg-mood-card .dates {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 40%;
+}
+
+/* DATE INPUT STYLES */
+/* Removes the clear button from date inputs */
+input[type="date"]::-webkit-clear-button {
+  display: none;
+}
+
+/* Removes the spin button */
+input[type="date"]::-webkit-inner-spin-button {
+  display: none;
+}
+
+/* Always display the drop down caret */
+input[type="date"]::-webkit-calendar-picker-indicator {
+  color: #2c3e50;
+}
+
+/* A few custom styles for date inputs */
+input[type="date"] {
+  appearance: none;
+  -webkit-appearance: none;
+  color: black;
+  font-family: "Helvetica", arial, sans-serif;
+  font-size: 18px;
+  border: none;
+  padding: 5px;
+  display: inline-block !important;
+  visibility: visible !important;
+}
+
+input[type="date"]:focus {
+  color: black !important;
+  box-shadow: 0 1px 0 0 black !important;
+  border-bottom: 1px solid black !important;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+}
+
+#mood-count-card {
+  background-color: white;
+  border: none;
+  border-radius: 2rem;
+  padding: 1rem 1rem;
+  height: auto;
+  display: flex;
+  justify-content: space-between;
+  width: 43%;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+}
+
+#mood-count-card .number {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 50%;
+  padding: 0 1rem;
+}
+
+#mood-count-card .number p {
+  font-weight: 500;
+  font-size: 2rem;
+}
+
+#mood-count-card .dates {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 40%;
+}
+
+#chart-container {
+  background-color: white;
+  height: auto;
+  width: 100%;
+  margin-top: 4rem;
+  text-align: center;
+  border-radius: 1rem;
+}
+
+label {
+  color: rgb(155, 153, 153);
+  font-size: 0.9rem;
+  font-weight: 550;
+}

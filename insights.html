@@ -33,6 +33,64 @@
       </div>
     </nav>
 
+    <!-- MAIN CONTENT -->
+    <div id="content">
+      <!-- Average Mood Card -->
+      <div id="avg-mood-card">
+        <div class="mood">
+          <p>Your average mood</p>
+        </div>
+        <div class="dates">
+          <div class="from">
+            <label for="from">From:</label>
+            <input type="date" id="from" required />
+          </div>
+          <div class="to">
+            <label for="to">To:</label>
+            <input type="date" id="to" required />
+          </div>
+        </div>
+      </div>
+      <!-- Mood count Card-->
+      <div id="mood-count-card">
+        <div class="number">
+          <p>Number of moods</p>
+          <h3>15</h3>
+        </div>
+        <div class="dates">
+          <div class="from">
+            <label for="from">From:</label>
+            <input type="date" id="from" />
+          </div>
+          <div class="to">
+            <label for="to">To:</label>
+            <input type="date" id="to" />
+          </div>
+        </div>
+      </div>
+      <!-- Chart Container -->
+      <div id="chart-container">
+        <h2>Hi I'm a Chart</h2>
+      </div>
+    </div>
+
+    <!-- Scripts -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"
+      integrity="sha512-qTXRIMyZIFb8iQcfjXWCO8+M5Tbc38Qi5WzdPOYZHIlZpzBHG3L3by84BBBOiRGiEb7KKtAOAs5qYdUiZiQNNQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script src="https://unpkg.com/dayjs"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-firestore.js"></script>
+    <script src="/scripts/init-firebase.js"></script>
+    <script>
+      // taking references:
+      const db = firebase.firestore();
+      db.settings({ timestampsInSnapshots: true });
+    </script>
     <script src="./scripts/insights.js"></script>
   </body>
 </html>
