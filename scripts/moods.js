@@ -21,8 +21,6 @@ auth.onAuthStateChanged((u) => {
   db.collection("users")
     .doc(u.uid)
     .collection("moods")
-    .orderBy("date")
-    .orderBy("time")
     .get()
     .then((snapshot) => {
       snapshot.docs.forEach((mood) => {
@@ -47,6 +45,7 @@ function renderCard(Mood) {
   let note = document.createElement("p");
   let editlink = document.createElement("a");
   let deletelink = document.createElement("a");
+  // console.log(dateFormat);
 
   cardDiv.setAttribute("id", "card");
   cardDiv.setAttribute("data-id", Mood.id);
@@ -61,8 +60,14 @@ function renderCard(Mood) {
   note.setAttribute("id", "note");
   editlink.setAttribute("href", `update-mood.html?id=${Mood.id}`);
 
-  date.innerText = Mood.data().date;
-  time.innerText = Mood.data().time;
+  const fmtDate = new Date(Mood.data().date);
+  date.innerText =
+    fmtDate.getDate() +
+    "/" +
+    (fmtDate.getMonth() + 1) +
+    "/" +
+    fmtDate.getFullYear();
+  time.innerText = fmtDate.getHours() + ":" + fmtDate.getMinutes();
   mood.innerText = appMoods[Mood.data().yourMood];
   note.innerText = Mood.data().Note;
   // editlink.innerText = "Edit";

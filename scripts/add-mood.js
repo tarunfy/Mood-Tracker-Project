@@ -10,15 +10,7 @@ const dayPrediction = document.querySelector("#dayPrediction");
 const recentActivity = document.querySelector("#recentActivity");
 const form = document.querySelector("form");
 let uploadTask;
-let today = new Date();
-let currentDate = today.getDate();
-let currentMonth = today.getMonth() + 1;
-let currentYear = today.getFullYear();
-
-let dateValue = moment(today).format("YYYY-MM-DD");
-let currentHour = today.getHours();
-let currentMin = today.getMinutes();
-let timeValue = `${currentHour}:${currentMin}`;
+let today = Date.now();
 
 auth.onAuthStateChanged((user) => {
   if (user == null) {
@@ -125,8 +117,7 @@ function onUploadSuccess() {
         dayPrediction: form.dayPrediction.value,
         recentActivity: form.recentActivity.value,
         photoUrl: downloadURL,
-        date: dateValue,
-        time: timeValue,
+        date: Date.now(),
       });
       form.yourMood.value = "";
       form.recentActivity.value = "";
