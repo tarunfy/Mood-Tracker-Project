@@ -45,7 +45,6 @@ function renderCard(Mood) {
   let note = document.createElement("p");
   let editlink = document.createElement("a");
   let deletelink = document.createElement("a");
-  // console.log(dateFormat);
 
   cardDiv.setAttribute("id", "card");
   cardDiv.setAttribute("data-id", Mood.id);
