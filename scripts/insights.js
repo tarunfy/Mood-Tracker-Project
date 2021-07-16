@@ -54,11 +54,9 @@ numToInput.addEventListener("change", (e) => {
   updateNumMoods();
 });
 chartFromInput.addEventListener("change", (e) => {
-  console.log(e.target.value);
   chartDetails();
 });
 chartToInput.addEventListener("change", (e) => {
-  console.log(e.target.value);
   chartDetails();
 });
 
@@ -145,7 +143,6 @@ function chartDetails() {
       let peacefulMood = document.getElementById("peacefulMood");
       let optimisticMood = document.getElementById("optimisticMood");
       snapshot.docs.forEach((doc) => {
-        console.log(doc.data().yourMood);
         switch (doc.data().yourMood) {
           case "0":
             moodCounter += 1;
