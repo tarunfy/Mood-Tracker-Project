@@ -12,6 +12,16 @@ const date = new Date();
 const currentDate = moment(date).format("YYYY-MM-DD");
 const a = moment().subtract(7, "days").calendar();
 const previousDate = moment(a).format("YYYY-MM-DD");
+const card1 = document.getElementById("avg-mood-card");
+const card2 = document.getElementById("mood-count-card");
+const card3 = document.getElementById("chart-container");
+
+// Animation:
+window.addEventListener("load", () => {
+  card1.style.transform = "translateX(0)";
+  card2.style.transform = "translateX(0)";
+  card3.style.opacity = 1;
+});
 
 // Mood object:
 let moods = {

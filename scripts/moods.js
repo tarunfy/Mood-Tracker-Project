@@ -2,6 +2,7 @@
 const signoutBtn = document.querySelector(".signout-btn");
 const cardsContainer = document.getElementById("cards");
 const floatBtn = document.getElementById("floating-btn");
+
 let userId;
 const appMoods = {
   0: "Happy",
