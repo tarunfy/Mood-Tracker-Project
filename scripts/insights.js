@@ -67,6 +67,7 @@ auth.onAuthStateChanged((u) => {
   }
   userId = u.uid;
   updateDetails();
+  gitChart();
 });
 
 function updateDetails() {
@@ -180,5 +181,58 @@ function chartDetails() {
     })
     .catch((err) => {
       console.log(err);
+    });
+}
+
+// Git Chart
+function gitChart() {
+  db.collection("users")
+    .doc(userId)
+    .collection("moods")
+    .orderBy("date")
+    .get()
+    .then((snapshot) => {
+      let timeStampArray = [];
+      let dateArray = [];
+      snapshot.docs.forEach((doc) => {
+        let timeStamp = doc.data().date;
+        timeStampArray.push(timeStamp);
+        let date = new Date(doc.data().date);
+        dateArray.push(date.getDate());
+      });
+
+      let unique = dateArray.filter((v, i, a) => a.indexOf(v) === i);
+      let firstDate = unique[0];
+      const date1 = new Date("01/01/2021");
+      const date2 = new Date(timeStampArray[0]);
+      const diffTime = Math.abs(date2 - date1);
+      const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+      console.log(diffDays);
+
+      console.log(unique);
+
+      const x = diffDays + 1 + (unique[unique.length - 1] - unique[0]);
+
+      console.log(x);
+      const squares = document.querySelector(".squares");
+      let y = unique[0];
+      let r = 0;
+      for (var i = 1; i < 365; i++) {
+        let level = 0;
+        if (i >= diffDays && i <= x) {
+          if (unique[r] === y) {
+            level = 2;
+            r++;
+          }
+          y++;
+        }
+        squares.insertAdjacentHTML(
+          "beforeend",
+          `<li data-level="${level}"></li>`
+        );
+      }
+    })
+    .catch((err) => {
+      console.log(err.message);
     });
 }
